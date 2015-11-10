@@ -1,0 +1,62 @@
+configurations 
+{
+    // This node contains custom pivot information.
+    Toolset 
+    {
+        key : "PlatformToolset"; // this is CoApp pre-defined key
+        choices: { v140, v120, v110, v100 };
+    };
+}
+nuget {
+    nuspec {
+        id = protobuf-vc140;
+        version : 2.5.0.0;
+        title : Protocol Buffers v140;
+        authors : google;
+        owners : ksmyth;
+        licenseUrl : "http://protobuf.googlecode.com/svn/trunk/COPYING.txt";
+        projectUrl: "https://code.google.com/p/protobuf/";
+        iconUrl: "https://ssl.gstatic.com/codesite/ph/images/search-48.gif";
+        requireLicenseAcceptance:false;
+        summary: Protocol Buffers (C++) vc140 libraries;
+
+        description: @"Protocol Buffers are a way of encoding structured data in an efficient yet extensible format.";
+        releaseNotes: "";
+        copyright: Copyright 2013;
+        tags: { native, cpp, protobuf, serialization };
+    }
+    dependencies {
+        packages : {
+            protobuf/2.5.0.0,
+        };
+    }
+
+
+    files {
+        #overlay : false;
+        vcpdb += {
+            // #flatten = true;
+            #destination = ${d_lib};
+        };
+
+        [x64,v140,release] { 
+            lib += vsprojects\x64\Release\libprotobuf.lib;
+            vcpdb += vsprojects\x64\Release\libprotobuf.pdb;
+        }
+
+        [x64,v140,debug] { 
+            lib += vsprojects\x64\Debug\libprotobuf.lib;
+            vcpdb += vsprojects\x64\Debug\libprotobuf.pdb;
+        }
+
+        [win32,v140,release] { 
+            lib += vsprojects\Release\libprotobuf.lib;
+            vcpdb += vsprojects\Release\libprotobuf.pdb;
+        }
+
+        [win32,v140,debug] { 
+            lib += vsprojects\Debug\libprotobuf.lib;
+            vcpdb += vsprojects\Debug\libprotobuf.pdb;
+        }
+    }
+}
