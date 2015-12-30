@@ -40,7 +40,7 @@ C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe /m vsprojects\protobuf
 C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe /m vsprojects\protobuf.sln /t:libprotobuf /p:VisualStudioVersion=9.0;PlatformToolset=v90;Configuration=Release;Platform=win32 || exit /b !ERRORLEVEL!
 C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe /m vsprojects\protobuf.sln /t:libprotobuf /p:VisualStudioVersion=9.0;PlatformToolset=v90;Configuration=Debug;Platform=win32 || exit /b !ERRORLEVEL!
 
-rem TODO powershell -ExecutionPolicy ByPass ipmo \"C:\Program Files (x86)\Outercurve Foundation\Modules\CoApp\CoApp.Powershell.Tools.dll\" ; Write-NuGetPackage .\protobuf-vc100.autopkg || exit /b !ERRORLEVEL!
+powershell -ExecutionPolicy ByPass ipmo \"C:\Program Files (x86)\Outercurve Foundation\Modules\CoApp\CoApp.Powershell.Tools.dll\" ; Write-NuGetPackage .\protobuf-vc90.autopkg || exit /b !ERRORLEVEL!
 
 rd /s/q vsprojects\Debug vsprojects\Release vsprojects\x64
 
