@@ -1,7 +1,7 @@
 nuget {
     nuspec {
         id = protobuf-vc100;
-        version : 2.5.0.0;
+        version : 2.6.1.0;
         title : Protocol Buffers v100;
         authors : google;
         owners : ksmyth;
@@ -18,7 +18,7 @@ nuget {
     }
     dependencies {
         packages : {
-            protobuf/2.5.0.0,
+            protobuf/2.6.1.0,
         };
     }
 
