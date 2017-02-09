@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\google\protobuf\io\coded_stream.cc" />
+    <ClCompile Include="..\src\google\protobuf\io\strtod.cc" />
     <ClCompile Include="..\src\google\protobuf\stubs\common.cc" />
     <ClCompile Include="..\src\google\protobuf\descriptor.cc" />
     <ClCompile Include="..\src\google\protobuf\descriptor.pb.cc" />
